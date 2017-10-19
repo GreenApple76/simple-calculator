@@ -97,6 +97,55 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+h1 {
+  font-family: 'Cardo', serif;
+  font-weight: 300;
+  color: #FFCF40;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  background-color: #ce0000;
+}
+
+input {
+  font-family: 'Cardo', serif;
+  font-size: 1.5em;
+  background-color: #FFCF40;
+  width: 93.25%;
+  height: 2em;
+  margin-bottom: .5em;
+  margin-top: .5em;
+  text-align: right;
+}
+
+button {
+  font-family: 'Cardo', serif;
+  font-weight: 700;
+}
+.container {
+  width: 67%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.row1, .row2, .row3 {
+  width: 22%;
+  margin: .1em;
+}
+
+.row4 {
+  width: 46.25%;
+  margin: .1em;
+}
+
+#ac, #ce {
+  color: #fff;
+  background-color: #ff0000;
+  font-weight: 400;
+}
 
 
 
