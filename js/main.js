@@ -5,6 +5,8 @@ $(document).ready(function() {
 	var tmp;
 	var sum = 0;
 	var operator;
+	var isTotalDisplayed = false; // track when user clicks equal so the displayed total can be
+								  // cleared on subsequent number button click
 
 	$('#ac').click(function() {
 		sum = 0;
@@ -147,6 +149,9 @@ $(document).ready(function() {
 		$('#val').val(sum);
 		sum = 0;
 		operator = undefined;
+		calc = [];
+		tmp = '0';
+		isTotalDisplayed = true;
 	});
 
 	$('#dec').click(function() {
@@ -160,92 +165,142 @@ $(document).ready(function() {
 
 	$('#0').click(function() {
 		calc.push(0);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('0');			
+		} else {
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '0');
 		}
-		$('#val').val(tmp + '0');
 	});
 
 	$('#1').click(function() {
 		calc.push(1);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('1');			
+		} else {
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '1');			
 		}
-		$('#val').val(tmp + '1');
 	});
 
 	$('#2').click(function() {
 		calc.push(2);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('2');			
+		} else {	
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '2');
 		}
-		$('#val').val(tmp + '2');
 	});
 
 	$('#3').click(function() {
 		calc.push(3);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('3');			
+		} else {	
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '3');
 		}
-		$('#val').val(tmp + '3');
 	});
 
 	$('#4').click(function() {
 		calc.push(4);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('4');			
+		} else {	
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '4');
 		}
-		$('#val').val(tmp + '4');
 	});
 
 	$('#5').click(function() {
 		calc.push(5);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('5');			
+		} else {	
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '5');
 		}
-		$('#val').val(tmp + '5');
 	});
 
 	$('#6').click(function() {
 		calc.push(6);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('6');			
+		} else {	
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '6');
 		}
-		$('#val').val(tmp + '6');
 	});
 
 	$('#7').click(function() {
 		calc.push(7);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('7');			
+		} else {	
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '7');
 		}
-		$('#val').val(tmp + '7');
 	});
 
 	$('#8').click(function() {
 		calc.push(8);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('8');			
+		} else {	
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '8');
 		}
-		$('#val').val(tmp + '8');
 	});
 
 	$('#9').click(function() {
 		calc.push(9);
-		tmp = $('#val').val();
-		if (tmp === '0') {
-			tmp = '';
+		if (isTotalDisplayed) {
+			isTotalDisplayed = false;
+			$('#val').val('9');			
+		} else {	
+			tmp = $('#val').val();
+			if (tmp === '0') {
+				tmp = '';
+			}
+			$('#val').val(tmp + '9');
 		}
-		$('#val').val(tmp + '9');
 	});
 
 });
