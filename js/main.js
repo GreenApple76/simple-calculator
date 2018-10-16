@@ -47,16 +47,22 @@ $(document).ready(function() {
 		$('#val').val(tmp);
 	});
 
+	// perform mathematical operations when user clicks equals button
 	$('#equ').click(function() {
+		// assign user input to parseCalc array for parsing
 		for(var i = 0; i < calc.length; i++) {
 			parseCalc.push(calc[i]);
+			// determine if current value is an operator
 			if (calc[i] === '+' || calc[i] === '-' || calc[i] === 'x' || calc[i] === '/') {
-				operator = calc[i];
-				parseCalc.pop();
+				operator = calc[i]; // track operator
+				parseCalc.pop(); // remove operator from parseCalc to allow for determining numerical values
+				
+				// extract numerical value to the left of the operator
 				if (parseCalc.length >= 1) {
 					tmp = parseFloat(parseCalc.join(''));
 					parseCalc = [];
 
+					// perform calculations
 					switch (operator) {
 						case '+':
 							sum = sum + tmp;
@@ -69,7 +75,7 @@ $(document).ready(function() {
 							}
 							break;
 						case 'x':
-							sum = sum * tmp;
+							sum = tmp;
 							break;
 						case '/':
 							if (sum === 0 || tmp === 0) {
@@ -80,10 +86,12 @@ $(document).ready(function() {
 							break; 
 					}
 				}
+			// extract numerical value to the right of the operator
 			} else if (operator && (i+1 >= calc.length)) {
 				tmp = parseFloat(parseCalc.join(''));
 				parseCalc = [];
 
+				// perform calculations
 				switch (operator) {
 					case '+':
 						sum = sum + tmp;
@@ -102,10 +110,12 @@ $(document).ready(function() {
 						}
 						break; 
 				}
+			// extract numerical value to the right of the operator if next iteration on input is another operator
 			} else if (operator && (calc[i+1] === '+' || calc[i+1] === '-' || calc[i+1] === 'x' || calc[i+1] === '/')) {
 				tmp = parseFloat(parseCalc.join(''));
 				parseCalc = [];
 
+				// perform calculations
 				switch (operator) {
 					case '+':
 						sum = sum + tmp;
@@ -132,6 +142,8 @@ $(document).ready(function() {
 				// do nothing
 			}
 		}
+		
+		// output result of calculation and reset variables
 		$('#val').val(sum);
 		sum = 0;
 		operator = undefined;
